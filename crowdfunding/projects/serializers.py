@@ -6,6 +6,8 @@ class PledgeSerializer(serializers.ModelSerializer): #doing the serializer no ma
     class Meta:
         model = Pledge
         fields = ['id', 'amount', 'comment', 'anonymous', 'project', 'supporter']
+        read_only_fields = ['id', 'supporter']
+
 
 class ProjectSerializer(serializers.Serializer):
     id = serializers.ReadOnlyField()
@@ -15,7 +17,7 @@ class ProjectSerializer(serializers.Serializer):
     image = serializers.URLField()
     is_open = serializers.BooleanField()
     date_created = serializers.DateTimeField()
-    owner = serializers.CharField(max_length=200)
+    owner = serializers.ReadOnlyField(source='owner_id')
     #pledges = PledgeSerializer(many=True, read_only=True) #so we can see the pledges for each project
 
     def create(self, validated_data):

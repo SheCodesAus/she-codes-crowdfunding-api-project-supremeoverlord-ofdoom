@@ -18,7 +18,7 @@ class ProjectList(APIView): #project is going to be in long form (this is what i
     def post(self, request): #when you get a post request this is what you do
         serializer = ProjectSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.save(owner=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -38,4 +38,8 @@ class ProjectDetail(APIView):
 class PledgeList(generics.ListCreateAPIView): #pledge is going to be shown in short efficient form (here is your car who carts whats in it)
     queryset = Pledge.objects.all()
     serializer_class = PledgeSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(supporter=self.request.user)
+
 
