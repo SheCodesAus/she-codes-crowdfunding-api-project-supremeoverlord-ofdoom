@@ -5,8 +5,35 @@ from .models import Project, Pledge
 class PledgeSerializer(serializers.ModelSerializer): #doing the serializer no manually
     class Meta:
         model = Pledge
-        fields = ['id', 'amount', 'comment', 'anonymous', 'project', 'supporter']
+        fields = ['id', 'amount', 'comment', 'anonymous', 'project', 'supporter'] 
         read_only_fields = ['id', 'supporter']
+        if 'anonymous' == 1:
+            exclude = ['supporter']
+
+            
+
+# class PledgeSerializer(serializers.ModelSerializer): #doing the serializer no manually
+#     class Meta:
+#         model = Pledge
+#         fields = ['id', 'amount', 'comment', 'anonymous', 'project', 'supporter'] 
+#         if 'anonymous' == 1:
+#             read_only_fields = ['id']
+#             extra_kwargs = {'supporter': {'write_only': True}}
+#         else:
+#             read_only_fields = ['id', 'supporter']
+#             extra_kwargs = {'supporter': {'write_only': False}}
+
+# class PledgeSerializer(serializers.ModelSerializer): #doing the serializer no manually
+#     anonymous_conditional_field = serializers.SerializerMethodField()
+
+#     class Meta:
+#         model = Pledge
+#         fields = ['id', 'amount', 'comment', 'anonymous', 'project', 'supporter'] 
+#         read_only_fields = ['id', 'supporter']
+    
+#     def get_anonymous_conditional_field(self, obj):
+#             if obj.anonymous == 1:
+#                 return obj.amount
 
 
 class ProjectSerializer(serializers.Serializer):
