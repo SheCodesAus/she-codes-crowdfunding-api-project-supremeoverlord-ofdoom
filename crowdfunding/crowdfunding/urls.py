@@ -26,3 +26,9 @@ urlpatterns = [
     path('api-token-auth/', obtain_auth_token, name='api_token_auth')
 ]
 
+from django.http import HttpResponseNotFound
+
+def blanket_404_response(request, exception):
+        return HttpResponseNotFound("404 Error, It seems you have traveled to a nonexistent place. A gnome has gifted you one GnomeBuck to take with you on your journey. (*GnomeBucks have no monetary value)")
+
+handler404 = blanket_404_response
