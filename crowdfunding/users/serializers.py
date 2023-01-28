@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import CustomUser
+# from projects.serializers import ProjectDetailSerializer
 
 # class CustomUserSerializer(serializers.Serializer):
 #     id = serializers.ReadOnlyField()
@@ -10,6 +11,7 @@ from .models import CustomUser
 #         return CustomUser.objects.create(**validated_data)
 
 class CustomUserSerializer(serializers.ModelSerializer):
+    # liked_by = ProjectDetailSerializer(many=True, read_only=True)
     class Meta:
         model = CustomUser
         fields = ['id', 'email', 'username', 'password']

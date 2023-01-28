@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from .models import Project, Pledge
+from users.serializers import CustomUserSerializer
 
 class PledgeSerializer(serializers.ModelSerializer): #doing the serializer no manually
     supporter = serializers.SerializerMethodField()
@@ -141,6 +142,7 @@ class ProjectSerializer(serializers.Serializer):
 
 class ProjectDetailSerializer(ProjectSerializer): #pledges linked to each project split off 
     pledges = PledgeSerializer(many=True, read_only=True)  #reducing the amount of data we are fetching when viewing allprojects     
+    liked_by = CustomUserSerializer(many=True, read_only=True)
 
 class PledgeDetailSerializer(PledgeSerializer):
     class Meta:
