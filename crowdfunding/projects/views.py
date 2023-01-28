@@ -5,7 +5,7 @@ from django.http import Http404
 from rest_framework import status, generics, permissions
 
 from .models import Project, Pledge
-from .serializers import ProjectSerializer, PledgeSerializer, ProjectDetailSerializer
+from .serializers import ProjectSerializer, PledgeSerializer, ProjectDetailSerializer, PledgeDetailSerializer
 from .permissions import IsOwnerOrReadOnly
 
 # Create your views here.
@@ -62,5 +62,16 @@ class PledgeList(generics.ListCreateAPIView): #pledge is going to be shown in sh
 
     def perform_create(self, serializer):
         serializer.save(supporter=self.request.user)
+
+class PledgeDetail(generics.RetrieveUpdateDestroyAPIView): #pledge is going to be shown in short efficient form (here is your car who carts whats in it)
+    
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly]
+    serializer_class = PledgeDetailSerializer
+    queryset = Pledge.objects.all()
+    
+
+
+    
 
 

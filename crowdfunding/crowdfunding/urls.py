@@ -25,3 +25,4 @@ urlpatterns = [
     path("", include('projects.urls')), #we will pass everything through here
     path('api-token-auth/', obtain_auth_token, name='api_token_auth')
 ]
+

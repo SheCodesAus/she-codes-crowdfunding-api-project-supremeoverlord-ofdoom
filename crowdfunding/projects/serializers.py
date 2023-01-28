@@ -141,3 +141,8 @@ class ProjectSerializer(serializers.Serializer):
 class ProjectDetailSerializer(ProjectSerializer): #pledges linked to each project split off 
     pledges = PledgeSerializer(many=True, read_only=True)  #reducing the amount of data we are fetching when viewing allprojects     
 
+class PledgeDetailSerializer(PledgeSerializer):
+    class Meta:
+        model = Pledge
+        fields = ['id', 'amount', 'comment', 'anonymous', 'project', 'supporter'] 
+        read_only_fields = ['id']
