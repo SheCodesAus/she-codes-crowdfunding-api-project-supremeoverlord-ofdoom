@@ -123,7 +123,8 @@ class ProjectSerializer(serializers.Serializer):
     date_created = serializers.DateTimeField()
     owner = serializers.ReadOnlyField(source='owner_id')
     #pledges = PledgeSerializer(many=True, read_only=True) #so we can see the pledges for each project
-
+    total = serializers.ReadOnlyField()
+    
     def create(self, validated_data):
         return Project.objects.create(**validated_data) #returns key values pairs - title = string, descrption = value ect
 
