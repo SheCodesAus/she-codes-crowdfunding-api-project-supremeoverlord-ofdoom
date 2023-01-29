@@ -81,21 +81,17 @@ In conclusion, "Gnome My Enemy" is a unique platform that provides a means for i
 - [X] impliment /api-token-auth/
 ​
 ## Additional features
-- [X] {List of pledges assoicated with project}
+- [X] Feature: List of pledges assoicated with project
+   - Description: All pledges are listed under the Project Detail
 ​
-{{ All pledges are listed under the Project Detail }}
+- [X] Feature: List of user's pledges
+   - Description: All user's pledges are listed in the User Detail, this view is restricted to the logged in user to keep anonymous pledges anonymous (otherwise people could see who anonymous  pledges are linked to)
 ​
-- [X] {List of user's pledges}
+- [X] Feature: Current total funded
+   - Description: Total amolunt raised from pledges is calulcated
 ​
-{{ All user's pledges are listed in the User Detail, this view is restricted to the logged in user to keep anonymous pledges anonymous (otherwise people could see who anonymous  pledges are linked to) }}
-​
-- [X] {Current total funded}
-​
-{{ Total amolunt raised from pledges is calulcated }}
-​
-- [X] {Change password}
-​
-{{ User password can be changed (as long as you remember the current password}}
+- [X] Feature: Change password
+   - Description: User password can be changed (as long as you remember the current password}}
 ​
 ### External libraries used
 - none
