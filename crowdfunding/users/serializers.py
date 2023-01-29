@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import CustomUser
-# from projects.serializers import ProjectDetailSerializer
+from projects.serializers import PledgeSerializer
 
 # class CustomUserSerializer(serializers.Serializer):
 #     id = serializers.ReadOnlyField()
@@ -12,11 +12,13 @@ from .models import CustomUser
 
 class CustomUserSerializer(serializers.ModelSerializer):
     # liked_by = ProjectDetailSerializer(many=True, read_only=True)
+    # supporter_private_pledges = PledgeSerializer(many=True, read_only=True)
     class Meta:
         model = CustomUser
         fields = ['id', 'email', 'username', 'password']
         read_only_fields = ['id']
         extra_kwargs = {'password': {'write_only': True}}
+        
 
     def create(self, validated_data):
         user = CustomUser(
@@ -27,6 +29,15 @@ class CustomUserSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
+class CustomUserDetailSerializer(serializers.ModelSerializer):
+    # liked_by = ProjectDetailSerializer(many=True, read_only=True)
+    supporter_private_pledges = PledgeSerializer(many=True, read_only=True)
+    class Meta:
+        model = CustomUser
+        fields = ['id', 'email', 'username', 'password', 'supporter_private_pledges']
+        read_only_fields = ['id']
+        extra_kwargs = {'password': {'write_only': True}}
+        
 class ChangePasswordSerializer(serializers.Serializer):
     model = CustomUser
 

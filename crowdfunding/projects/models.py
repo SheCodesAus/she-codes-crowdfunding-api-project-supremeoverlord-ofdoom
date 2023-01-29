@@ -21,7 +21,7 @@ class Project(models.Model):
         User,
         related_name='liked_projects'
     )
-    
+
     @property
     def total(self):
         return self.pledges.aggregate(sum=models.Sum('amount'))['sum']
@@ -31,9 +31,13 @@ class Pledge(models.Model):
     comment = models.CharField(max_length=200)
     anonymous = models.BooleanField()
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="pledges")
-    supporter = models.ForeignKey(
+    supporter_public = models.ForeignKey(
         User,
         on_delete=models.CASCADE,  # using CASCADE so if you delete the project, then it will delete the pledges
-        related_name='supporter_pledges'
+        related_name='supporter_public_pledges')
+    supporter_private= models.ForeignKey(
+    User,
+    on_delete=models.CASCADE,  # using CASCADE so if you delete the project, then it will delete the pledges
+    related_name='supporter_private_pledges'
     )
 

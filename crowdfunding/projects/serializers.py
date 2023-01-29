@@ -1,20 +1,21 @@
 from rest_framework import serializers
 
 from .models import Project, Pledge
-from users.serializers import CustomUserSerializer
+# from users.serializers import CustomUserSerializer
 
 class PledgeSerializer(serializers.ModelSerializer): #doing the serializer no manually
-    supporter = serializers.SerializerMethodField()
+    supporter_public = serializers.SerializerMethodField()
     class Meta:
         model = Pledge
-        fields = ['id', 'amount', 'comment', 'anonymous', 'project', 'supporter'] 
+        fields = ['id', 'amount', 'comment', 'anonymous', 'project', 'supporter_private', 'supporter_public'] 
         read_only_fields = ['id']
+        extra_kwargs = {'supporter_private': {'write_only': True}} #hiding this but to use as a link to users pledges
         
-    def get_supporter(self, obj):
+    def get_supporter_public(self, obj):
         if obj.anonymous:
             return f"mystery gnome enthusiast"
         else:
-            return obj.supporter.username
+            return obj.supporter_public.username
         
     def create(self, validated_data):
         return Pledge.objects.create(**validated_data)
@@ -142,10 +143,11 @@ class ProjectSerializer(serializers.Serializer):
 
 class ProjectDetailSerializer(ProjectSerializer): #pledges linked to each project split off 
     pledges = PledgeSerializer(many=True, read_only=True)  #reducing the amount of data we are fetching when viewing allprojects     
-    liked_by = CustomUserSerializer(many=True, read_only=True)
+    # liked_by = CustomUserSerializer(many=True, read_only=True)
 
 class PledgeDetailSerializer(PledgeSerializer):
     class Meta:
         model = Pledge
-        fields = ['id', 'amount', 'comment', 'anonymous', 'project', 'supporter'] 
+        fields = ['id', 'amount', 'comment', 'anonymous', 'project', 'supporter_private', 'supporter_public'] 
         read_only_fields = ['id']
+        extra_kwargs = {'supporter_private': {'write_only': True}}

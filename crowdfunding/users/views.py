@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 
 
 from .models import CustomUser
-from .serializers import CustomUserSerializer, ChangePasswordSerializer
+from .serializers import CustomUserSerializer, ChangePasswordSerializer, CustomUserDetailSerializer
 
 class CustomUserList(APIView):
 
@@ -32,8 +32,21 @@ class CustomUserDetail(APIView):
     
     def get(self, request, pk):
         user = self.get_object(pk)
-        serializer = CustomUserSerializer(user)
+        serializer = CustomUserDetailSerializer(user)
         return Response(serializer.data)
+
+# class CustomUserDetail(APIView):
+
+#     def get_object(self, pk):
+#         try:
+#             return CustomUser.objects.get(pk=pk)
+#         except CustomUser.DoesNotExist:
+#             raise Http404
+    
+#     def get(self, request, pk):
+#         user = self.get_object(pk)
+#         serializer = CustomUserSerializer(user)
+#         return Response(serializer.data)
 
 class ChangePasswordView(generics.UpdateAPIView):
     """
