@@ -4,7 +4,7 @@ she-codes-crowdfunding-api-project-supremeoverlord-ofdoom created by GitHub Clas
 ​
 "Gnome My Enemy" is a crowdfunding platform designed for individuals seeking to gnome someone. Gnoming is the act of placing a large number of gnomes in a particular area (commonly someone's garden), often as a form of creative expression and revenge. Our platform allows users to crowdfund the necessary resources to execute their gnome projects, whether it be as a form of retaliation or simply for personal enjoyment.
 
-The target audience for "Gnome My Enemy" includes anyone who wants to gnome someone but lacks the funds to purchase the required gnomes. Our user-friendly interface makes it simple for individuals to raise money for their projects and bring their gnome visions to life.
+The target audience for "Gnome My Enemy" includes anyone who wants to gnome someone but lacks the funds to purchase the required gnomes. Our user-friendly interface makes it simple for individuals to raise money or donated gnomes for their projects and bring their gnome visions to life.
 
 In conclusion, "Gnome My Enemy" is a unique platform that provides a means for individuals to express themselves through gnoming. Whether it's for revenge or for personal fulfillment, this platform offers a way for people to bring their gnome projects to fruition.
 ​
