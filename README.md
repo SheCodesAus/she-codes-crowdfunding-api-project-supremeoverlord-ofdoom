@@ -91,7 +91,7 @@ In conclusion, "Gnome My Enemy" is a unique platform that provides a means for i
    - Description: Total amolunt raised from pledges is calulcated
 ​
 - [X] Feature: Change password
-   - Description: User password can be changed (as long as you remember the current password}}
+   - Description: User password can be changed (as long as you remember the current password
 ​
 ### External libraries used
 - none
@@ -109,7 +109,6 @@ In conclusion, "Gnome My Enemy" is a unique platform that provides a means for i
 - https://docs.google.com/document/d/1JXM0Hmlw_aVDU9b-AmE9cT3Q4o9pw872nULi47lfP5c/edit?usp=sharing
 ​
 ### Step by step instructions for how to register a new user and create a new project (i.e. endpoints and body data).
-​
 1. Create User
 ​
 ```shell
