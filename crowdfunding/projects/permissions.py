@@ -15,3 +15,20 @@ class IsSupporterOrReadOnly(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS: #is the logged in user the owner
             return True
         return obj.supporter == request.user #if that's true - then can edit
+
+class IsUserOrBanished(permissions.BasePermission): #only logged in user can view user's details
+
+    def has_object_permission(self, request, view, obj):
+        
+        return obj == request.user 
+        
+
+
+# class IsUserOrBanished(permissions.BasePermission): #only logged in user can view user's details
+
+#     def has_object_permission(self, request, view, obj):
+#         if request.method in permissions.SAFE_METHODS:
+#             return True
+#         # return obj.id == request.user.id
+#         return obj == request.user 
+
