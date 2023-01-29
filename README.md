@@ -1,19 +1,24 @@
 # she-codes-crowdfunding-api-project-supremeoverlord-ofdoom
 she-codes-crowdfunding-api-project-supremeoverlord-ofdoom created by GitHub Classroom
-# {{ my project title }}
+# Crowdfunding API Project: Gnome My Enemy 
 ​
-{{ a paragraph detailing the purpose and target audience }}
-​
+"Gnome My Enemy" is a crowdfunding platform designed for individuals seeking to gnome someone. Gnoming is the act of placing a large number of gnomes in a particular area (commonly someone's garden), often as a form of creative expression and revenge. Our platform allows users to crowdfund the necessary resources to execute their gnome projects, whether it be as a form of retaliation or simply for personal enjoyment.
+
+The target audience for "Gnome My Enemy" includes anyone who wants to gnome someone but lacks the funds to purchase the required gnomes. Our user-friendly interface makes it simple for individuals to raise money or donated gnomes for their projects and bring their gnome visions to life.
+
+In conclusion, "Gnome My Enemy" is a unique platform that provides a means for individuals to express themselves through gnoming. Whether it's for revenge or for personal fulfillment, this platform offers a way for people to bring their gnome projects to fruition.
+
+### MVP Plan Submission
+- [X] The features your MVP will include (Flowchart)
+- https://docs.google.com/document/d/1VCotaI_QdUuFZhyv1mQSlnb9lwTiq3CAXf1KOz-ModU/edit?usp=sharing
+
 ## Features
-​
 ### User Accounts
-​
 - [X] Username
 - [X] Email Address
 - [X] Password
 ​
 ### Project
-​
 - [X] Create a project
   - [X] Title
   - [X] Owner (a user)
@@ -30,109 +35,104 @@ she-codes-crowdfunding-api-project-supremeoverlord-ofdoom created by GitHub Clas
   - [X] A comment to go with the pledge
   
 ### Implement suitable update delete
-​
 **Note: Not all of these may be required for your project, if you have not included one of these please justify why.**
-​
 - Project
   - [X] Create
   - [X] Retrieve
-  - [ ] Update
-  - [ ] Destroy
+  - [X] Update
+  - [ ] Destroy - projects cannot be deleted (to avoid problems), the owner can edit them to be closed for pledges
 - Pledge
   - [X] Create
   - [X] Retrieve
-  - [ ] Update
-  - [ ] Destroy
+  - [X] Update
+  - [X] Destroy
 - User
   - [X] Create
   - [X] Retrieve
-  - [ ] Update
-  - [ ] Destroy
+  - [X] Update
+  - [ ] Destroy - users cannot be deleted (to avoid problems)
 ​
 ### Implement suitable permissions
-​
 **Note: Not all of these may be required for your project, if you have not included one of these please justify why.**
-​
 - Project
-  - [ ] Limit who can create
-  - [ ] Limit who can retrieve
-  - [ ] Limit who can update
-  - [ ] Limit who can delete
+  - [X] Limit who can create
+  - [ ] Limit who can retrieve - not necessary to restrict this currently
+  - [X] Limit who can update
+  - [X] Limit who can delete
 - Pledge
-  - [ ] Limit who can create
-  - [ ] Limit who can retrieve
-  - [ ] Limit who can update
-  - [ ] Limit who can delete
-- Pledge
-  - [ ] Limit who can retrieve
-  - [ ] Limit who can update
-  - [ ] Limit who can delete
+  - [X] Limit who can create
+  - [X] Limit who can retrieve - pledges asscoiated to a user
+  - [X] Limit who can update
+  - [X] Limit who can delete
+- User
+  - [X] Limit who can retrieve - user detail view is restricted to the logged in user
+  - [X] Limit who can update
+  - [X] Limit who can delete
 ​
 ### Implement relevant status codes
-​
-- [ ] Get returns 200
-- [ ] Create returns 201
-- [ ] Not found returns 404
+- [X] Get returns 200
+- [X] Create returns 201
+- [X] Not found returns 404
 ​
 ### Handle failed requests gracefully 
-​
-- [ ] 404 response returns JSON rather than text
+- [X] 404 response returns JSON rather than text
 ​
 ### Use token authentication
-​
 - [X] impliment /api-token-auth/
 ​
 ## Additional features
+- [X] Feature: List of pledges assoicated with project
+   - Description: All pledges are listed under the Project Detail
 ​
-- [ ] {Title Feature 1}
+- [X] Feature: List of user's pledges
+   - Description: All user's pledges are listed in the User Detail, this view is restricted to the logged in user to keep anonymous pledges anonymous (otherwise people could see who anonymous  pledges are linked to)
 ​
-{{ description of feature 1 }}
+- [X] Feature: Current total funded
+   - Description: Total amolunt raised from pledges is calulcated
 ​
-- [ ] {Title Feature 2}
-​
-{{ description of feature 2 }}
-​
-- [ ] {Title Feature 3}
-​
-{{ description of feature 3 }}
+- [X] Feature: Change password
+   - Description: User password can be changed (as long as you remember the current password
 ​
 ### External libraries used
-​
-- [ ] django-filter
-​
-​
+- none
 ## Part A Submission
-​
-- [ ] A link to the deployed project.
-- [ ] A screenshot of Insomnia, demonstrating a successful GET method for any endpoint.
-- [ ] A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
-- [ ] A screenshot of Insomnia, demonstrating a token being returned.
-- [ ] Your refined API specification and Database Schema.
+
+- [X] A link to the deployed project.
+- https://floral-wave-2596.fly.dev/projects/
+
+- [X] A screenshot of Insomnia, demonstrating a successful GET method for any endpoint.
+- [X] A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
+- [X] A screenshot of Insomnia, demonstrating a token being returned.
+- https://docs.google.com/document/d/1Flhez9Vm9QefuknHGGyvLhLcJNmaH3y6JHf-92WM-S8/edit?usp=sharing
+
+- [X] Your refined API specification and Database Schema.
+- https://docs.google.com/document/d/1JXM0Hmlw_aVDU9b-AmE9cT3Q4o9pw872nULi47lfP5c/edit?usp=sharing
 ​
 ### Step by step instructions for how to register a new user and create a new project (i.e. endpoints and body data).
-​
 1. Create User
 ​
 ```shell
 curl --request POST \
-  --url http://127.0.0.1:8000/users/ \
+  --url http://localhost:8000/users/ \
+  --header 'Authorization: Token c00thisisafaketoken' \
   --header 'Content-Type: application/json' \
   --data '{
-	"username": "testuser",
-	"email": "not@myemail.com",
-	"password": "not-my-password"
+	"email": "test_user@gnome.com",
+  "username": "test_user",
+	"password": "not_a_real_password"
 }'
+
 ```
 ​
 2. Sign in User
 ​
 ```shell
 curl --request POST \
-  --url http://127.0.0.1:8000/api-token-auth/ \
+  --url http://localhost:8000/api-token-auth/ \
   --header 'Content-Type: application/json' \
   --data '{
-	"username": "testuser",
-	"password": "not-my-password"
+	"username": "test_user",
+	"password": "not_a_real_password"
 }'
 ```
 ​
@@ -140,15 +140,17 @@ curl --request POST \
 ​
 ```shell
 curl --request POST \
-  --url http://127.0.0.1:8000/projects/ \
-  --header 'Authorization: Token 5b8c82ec35c8e8cb1fac24f8eb6d480a367f322a' \
+  --url http://localhost:8000/projects/ \
+  --header 'Authorization: Token  c00thisisafaketoken' \
   --header 'Content-Type: application/json' \
   --data '{
-	"title": "Donate a cat",
-	"description": "Please help, we need a cat for she codes plus, our class lacks meows.",
-	"goal": 1,
-	"image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Dollar_bill_and_small_change.jpg",
-	"is_open": true,
-	"date_created": "2023-01-28T05:53:46.113Z"
-}'
+	
+"title": "Arch enemy gnoming",
+		"description": "My one final nemesis has taken it too far and copied my artwork of a loaf of bread, so I need to get even - gnome style",
+		"goal": 500,
+		"image": "https://perthlocalguide.com/wp-content/uploads/2021/09/Gnomesville-Image-2.jpg",
+		"is_open": true,
+	"date_created": "2023-01-29T13:05:49.764Z"
+}
+'
 ```
