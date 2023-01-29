@@ -2,7 +2,11 @@
 she-codes-crowdfunding-api-project-supremeoverlord-ofdoom created by GitHub Classroom
 # Crowdfunding API Project: Gnome My Enemy 
 ​
-{{ a paragraph detailing the purpose and target audience }}
+"Gnome My Enemy" is a crowdfunding platform designed for individuals seeking to gnome someone. Gnoming is the act of placing a large number of gnomes in a particular area (commonly someone's garden), often as a form of creative expression and revenge. Our platform allows users to crowdfund the necessary resources to execute their gnome projects, whether it be as a form of retaliation or simply for personal enjoyment.
+
+The target audience for "Gnome My Enemy" includes anyone who wants to gnome someone but lacks the funds to purchase the required gnomes. Our user-friendly interface makes it simple for individuals to raise money for their projects and bring their gnome visions to life.
+
+In conclusion, "Gnome My Enemy" is a unique platform that provides a means for individuals to express themselves through gnoming. Whether it's for revenge or for personal fulfillment, this platform offers a way for people to bring their gnome projects to fruition.
 ​
 ## Features
 ​
@@ -102,7 +106,7 @@ she-codes-crowdfunding-api-project-supremeoverlord-ofdoom created by GitHub Clas
 ​
 ### External libraries used
 ​
-- [ ] none
+- none
 ​
 ​
 ## Part A Submission
@@ -120,24 +124,26 @@ she-codes-crowdfunding-api-project-supremeoverlord-ofdoom created by GitHub Clas
 ​
 ```shell
 curl --request POST \
-  --url http://127.0.0.1:8000/users/ \
+  --url http://localhost:8000/users/ \
+  --header 'Authorization: Token c00thisisafaketoken' \
   --header 'Content-Type: application/json' \
   --data '{
-	"username": "testuser",
-	"email": "not@myemail.com",
-	"password": "not-my-password"
+	"email": "test_user@gnome.com",
+  "username": "test_user",
+	"password": "not_a_real_password"
 }'
+
 ```
 ​
 2. Sign in User
 ​
 ```shell
 curl --request POST \
-  --url http://127.0.0.1:8000/api-token-auth/ \
+  --url http://localhost:8000/api-token-auth/ \
   --header 'Content-Type: application/json' \
   --data '{
-	"username": "testuser",
-	"password": "not-my-password"
+	"username": "test_user",
+	"password": "not_a_real_password"
 }'
 ```
 ​
@@ -145,15 +151,17 @@ curl --request POST \
 ​
 ```shell
 curl --request POST \
-  --url http://127.0.0.1:8000/projects/ \
-  --header 'Authorization: Token 5b8c82ec35c8e8cb1fac24f8eb6d480a367f322a' \
+  --url http://localhost:8000/projects/ \
+  --header 'Authorization: Token  c00thisisafaketoken' \
   --header 'Content-Type: application/json' \
   --data '{
-	"title": "Donate a cat",
-	"description": "Please help, we need a cat for she codes plus, our class lacks meows.",
-	"goal": 1,
-	"image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Dollar_bill_and_small_change.jpg",
-	"is_open": true,
-	"date_created": "2023-01-28T05:53:46.113Z"
-}'
+	
+"title": "Arch enemy gnoming",
+		"description": "My one final nemesis has taken it too far and copied my artwork of a loaf of bread, so I need to get even - gnome style",
+		"goal": 500,
+		"image": "https://perthlocalguide.com/wp-content/uploads/2021/09/Gnomesville-Image-2.jpg",
+		"is_open": true,
+	"date_created": "2023-01-29T13:05:49.764Z"
+}
+'
 ```
