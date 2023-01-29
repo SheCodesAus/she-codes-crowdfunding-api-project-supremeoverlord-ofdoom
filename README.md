@@ -113,10 +113,14 @@ In conclusion, "Gnome My Enemy" is a unique platform that provides a means for i
 ​
 - [X] A link to the deployed project.
 - https://floral-wave-2596.fly.dev/projects/
+
 - [ ] A screenshot of Insomnia, demonstrating a successful GET method for any endpoint.
 - [ ] A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
 - [ ] A screenshot of Insomnia, demonstrating a token being returned.
+
+
 - [ ] Your refined API specification and Database Schema.
+- https://docs.google.com/document/d/1JXM0Hmlw_aVDU9b-AmE9cT3Q4o9pw872nULi47lfP5c/edit?usp=sharing
 ​
 ### Step by step instructions for how to register a new user and create a new project (i.e. endpoints and body data).
 ​
