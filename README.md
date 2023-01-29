@@ -36,37 +36,37 @@ she-codes-crowdfunding-api-project-supremeoverlord-ofdoom created by GitHub Clas
 - Project
   - [X] Create
   - [X] Retrieve
-  - [ ] Update
-  - [ ] Destroy
+  - [X] Update
+  - [] Destroy - projects cannot be deleted (to avoid problems), the owner can edit them to be closed for pledges
 - Pledge
   - [X] Create
   - [X] Retrieve
-  - [ ] Update
-  - [ ] Destroy
+  - [X] Update
+  - [X] Destroy
 - User
   - [X] Create
   - [X] Retrieve
-  - [ ] Update
-  - [ ] Destroy
+  - [X] Update
+  - [ ] Destroy - users cannot be deleted (to avoid problems)
 ​
 ### Implement suitable permissions
 ​
 **Note: Not all of these may be required for your project, if you have not included one of these please justify why.**
 ​
 - Project
-  - [ ] Limit who can create
-  - [ ] Limit who can retrieve
-  - [ ] Limit who can update
-  - [ ] Limit who can delete
+  - [X] Limit who can create
+  - [ ] Limit who can retrieve - not necessary to restrict this currently
+  - [X] Limit who can update
+  - [X] Limit who can delete
 - Pledge
-  - [ ] Limit who can create
-  - [ ] Limit who can retrieve
-  - [ ] Limit who can update
-  - [ ] Limit who can delete
-- Pledge
-  - [ ] Limit who can retrieve
-  - [ ] Limit who can update
-  - [ ] Limit who can delete
+  - [X] Limit who can create
+  - [X] Limit who can retrieve - pledges asscoiated to a user
+  - [X] Limit who can update
+  - [X] Limit who can delete
+- User
+  - [X] Limit who can retrieve - user detail view is restricted to the logged in user
+  - [X] Limit who can update
+  - [X] Limit who can delete
 ​
 ### Implement relevant status codes
 ​
@@ -84,26 +84,27 @@ she-codes-crowdfunding-api-project-supremeoverlord-ofdoom created by GitHub Clas
 ​
 ## Additional features
 ​
-- [ ] {Title Feature 1}
+- [X] {List of pledges assoicated with project}
 ​
-{{ description of feature 1 }}
+{{ All pledges are listed under the Project Detail}}
 ​
-- [ ] {Title Feature 2}
+- [X] {List of user's pledges}
 ​
-{{ description of feature 2 }}
+{{ All user's pledges are listed in the User Detail, this view is restricted to the logged in user to keep anonymous pledges anonymous (otherwise people could see who anonymous  pledges are linked to)}}
 ​
-- [ ] {Title Feature 3}
+- [X] {Current total funded}
 ​
-{{ description of feature 3 }}
+{{ Total amolunt raised from pledges is calulcated}}
 ​
 ### External libraries used
 ​
-- [ ] django-filter
+- [ ] none
 ​
 ​
 ## Part A Submission
 ​
-- [ ] A link to the deployed project.
+- [X] A link to the deployed project.
+- https://floral-wave-2596.fly.dev/projects/
 - [ ] A screenshot of Insomnia, demonstrating a successful GET method for any endpoint.
 - [ ] A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
 - [ ] A screenshot of Insomnia, demonstrating a token being returned.
