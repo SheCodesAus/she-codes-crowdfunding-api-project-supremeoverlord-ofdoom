@@ -1,6 +1,6 @@
 # she-codes-crowdfunding-api-project-supremeoverlord-ofdoom
 she-codes-crowdfunding-api-project-supremeoverlord-ofdoom created by GitHub Classroom
-# {{ my project title }}
+# Crowdfunding API Project: Gnome My Enemy 
 ​
 {{ a paragraph detailing the purpose and target audience }}
 ​
@@ -70,13 +70,13 @@ she-codes-crowdfunding-api-project-supremeoverlord-ofdoom created by GitHub Clas
 ​
 ### Implement relevant status codes
 ​
-- [ ] Get returns 200
-- [ ] Create returns 201
-- [ ] Not found returns 404
+- [X] Get returns 200
+- [X] Create returns 201
+- [X] Not found returns 404
 ​
 ### Handle failed requests gracefully 
 ​
-- [ ] 404 response returns JSON rather than text
+- [X] 404 response returns JSON rather than text
 ​
 ### Use token authentication
 ​
