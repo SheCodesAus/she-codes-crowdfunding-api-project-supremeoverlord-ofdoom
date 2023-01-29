@@ -13,7 +13,6 @@ In conclusion, "Gnome My Enemy" is a unique platform that provides a means for i
 - https://docs.google.com/document/d/1VCotaI_QdUuFZhyv1mQSlnb9lwTiq3CAXf1KOz-ModU/edit?usp=sharing
 
 ## Features
-​
 ### User Accounts
 - [X] Username
 - [X] Email Address
