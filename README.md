@@ -86,15 +86,19 @@ she-codes-crowdfunding-api-project-supremeoverlord-ofdoom created by GitHub Clas
 ​
 - [X] {List of pledges assoicated with project}
 ​
-{{ All pledges are listed under the Project Detail}}
+{{ All pledges are listed under the Project Detail }}
 ​
 - [X] {List of user's pledges}
 ​
-{{ All user's pledges are listed in the User Detail, this view is restricted to the logged in user to keep anonymous pledges anonymous (otherwise people could see who anonymous  pledges are linked to)}}
+{{ All user's pledges are listed in the User Detail, this view is restricted to the logged in user to keep anonymous pledges anonymous (otherwise people could see who anonymous  pledges are linked to) }}
 ​
 - [X] {Current total funded}
 ​
-{{ Total amolunt raised from pledges is calulcated}}
+{{ Total amolunt raised from pledges is calulcated }}
+​
+- [X] {Change password}
+​
+{{ User password can be changed (as long as you remember the current password}}
 ​
 ### External libraries used
 ​
