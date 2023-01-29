@@ -15,13 +15,11 @@ In conclusion, "Gnome My Enemy" is a unique platform that provides a means for i
 ## Features
 ​
 ### User Accounts
-​
 - [X] Username
 - [X] Email Address
 - [X] Password
 ​
 ### Project
-​
 - [X] Create a project
   - [X] Title
   - [X] Owner (a user)
@@ -38,9 +36,7 @@ In conclusion, "Gnome My Enemy" is a unique platform that provides a means for i
   - [X] A comment to go with the pledge
   
 ### Implement suitable update delete
-​
 **Note: Not all of these may be required for your project, if you have not included one of these please justify why.**
-​
 - Project
   - [X] Create
   - [X] Retrieve
@@ -58,9 +54,7 @@ In conclusion, "Gnome My Enemy" is a unique platform that provides a means for i
   - [ ] Destroy - users cannot be deleted (to avoid problems)
 ​
 ### Implement suitable permissions
-​
 **Note: Not all of these may be required for your project, if you have not included one of these please justify why.**
-​
 - Project
   - [X] Limit who can create
   - [ ] Limit who can retrieve - not necessary to restrict this currently
@@ -77,21 +71,17 @@ In conclusion, "Gnome My Enemy" is a unique platform that provides a means for i
   - [X] Limit who can delete
 ​
 ### Implement relevant status codes
-​
 - [X] Get returns 200
 - [X] Create returns 201
 - [X] Not found returns 404
 ​
 ### Handle failed requests gracefully 
-​
 - [X] 404 response returns JSON rather than text
 ​
 ### Use token authentication
-​
 - [X] impliment /api-token-auth/
 ​
 ## Additional features
-​
 - [X] {List of pledges assoicated with project}
 ​
 {{ All pledges are listed under the Project Detail }}
@@ -111,7 +101,7 @@ In conclusion, "Gnome My Enemy" is a unique platform that provides a means for i
 ### External libraries used
 - none
 ## Part A Submission
-​
+
 - [X] A link to the deployed project.
 - https://floral-wave-2596.fly.dev/projects/
 
