@@ -61,7 +61,8 @@ class PledgeList(generics.ListCreateAPIView): #pledge is going to be shown in sh
     serializer_class = PledgeSerializer
 
     def perform_create(self, serializer):
-        serializer.save(supporter=self.request.user)
+        serializer.save(supporter_private=self.request.user)
+        # serializer.save(supporter_public=self.request.user)
 
 class PledgeDetail(generics.RetrieveUpdateDestroyAPIView): #pledge is going to be shown in short efficient form (here is your car who carts whats in it)
     
