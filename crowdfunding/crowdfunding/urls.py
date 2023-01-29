@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import JsonResponse
 
 from rest_framework.authtoken.views import obtain_auth_token
 
@@ -25,3 +26,16 @@ urlpatterns = [
     path("", include('projects.urls')), #we will pass everything through here
     path('api-token-auth/', obtain_auth_token, name='api_token_auth')
 ]
+
+#can't get it into json format, blanket 404 error page for everything thats not handled in views
+# def blanket_404_response(request, exception):
+#         return HttpResponseNotFound("404 Error, It seems you have traveled to a nonexistent place. A gnome has gifted you one GnomeBuck to take with you on your journey. (*GnomeBucks have no monetary value)")
+
+
+def blanket_404_response(request, exception):
+        return JsonResponse({
+            'status_code': 404,
+            'error': "404 Error, It seems you have traveled to a nonexistent place. A gnome has gifted you one GnomeBuck to take with you on your journey. (*GnomeBucks have no monetary value)"
+        })
+
+handler404 = blanket_404_response
