@@ -7,7 +7,11 @@ she-codes-crowdfunding-api-project-supremeoverlord-ofdoom created by GitHub Clas
 The target audience for "Gnome My Enemy" includes anyone who wants to gnome someone but lacks the funds to purchase the required gnomes. Our user-friendly interface makes it simple for individuals to raise money or donated gnomes for their projects and bring their gnome visions to life.
 
 In conclusion, "Gnome My Enemy" is a unique platform that provides a means for individuals to express themselves through gnoming. Whether it's for revenge or for personal fulfillment, this platform offers a way for people to bring their gnome projects to fruition.
-​
+
+### MVP Plan Submission
+- [X] The features your MVP will include (Flowchart)
+- https://docs.google.com/document/d/1VCotaI_QdUuFZhyv1mQSlnb9lwTiq3CAXf1KOz-ModU/edit?usp=sharing
+
 ## Features
 ​
 ### User Accounts
@@ -41,7 +45,7 @@ In conclusion, "Gnome My Enemy" is a unique platform that provides a means for i
   - [X] Create
   - [X] Retrieve
   - [X] Update
-  - [] Destroy - projects cannot be deleted (to avoid problems), the owner can edit them to be closed for pledges
+  - [ ] Destroy - projects cannot be deleted (to avoid problems), the owner can edit them to be closed for pledges
 - Pledge
   - [X] Create
   - [X] Retrieve
@@ -105,10 +109,7 @@ In conclusion, "Gnome My Enemy" is a unique platform that provides a means for i
 {{ User password can be changed (as long as you remember the current password}}
 ​
 ### External libraries used
-​
 - none
-​
-​
 ## Part A Submission
 ​
 - [X] A link to the deployed project.
