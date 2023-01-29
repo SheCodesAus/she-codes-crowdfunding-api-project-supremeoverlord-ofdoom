@@ -15,7 +15,7 @@ class PledgeSerializer(serializers.ModelSerializer): #doing the serializer no ma
         if obj.anonymous:
             return f"mystery gnome enthusiast"
         else:
-            return obj.supporter_public.username
+            return obj.supporter_private.username
         
     def create(self, validated_data):
         return Pledge.objects.create(**validated_data)
