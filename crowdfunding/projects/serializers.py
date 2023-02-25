@@ -8,14 +8,17 @@ class PledgeSerializer(serializers.ModelSerializer): #doing the serializer no ma
     class Meta:
         model = Pledge
         fields = ['id', 'amount', 'comment', 'anonymous', 'project', 'supporter_private', 'supporter_public'] 
-        read_only_fields = ['id']
-        extra_kwargs = {'supporter_private': {'write_only': True}} #hiding this but to use as a link to users pledges
+        read_only_fields = ['id', 'supporter_private']
+        # extra_kwargs = {'supporter_private': {'write_only': True}} #hiding this but to use as a link to users pledges
         
     def get_supporter_public(self, obj):
         if obj.anonymous:
             return f"mystery gnome enthusiast"
         else:
             return obj.supporter_private.username
+    
+    def get_supporter(self, instance):
+        return instance.supporter.username
         
     def create(self, validated_data):
         return Pledge.objects.create(**validated_data)
